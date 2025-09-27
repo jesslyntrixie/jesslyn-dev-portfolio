@@ -1,0 +1,102 @@
+Jesslyn Trixie Edvilie
+ +62 881037037426 | jesslyntrixiedev@gmail.com | linkedin.com/in/jesslyn-trixie-edvilie | jesslyntrixie.vercel.app
+ West Jakarta, Indonesia
+ Summary
+ Computer Science undergraduate specializing in Intelligent Systems who translates complex algorithms into
+ practical, user-facing software. I combine published applied ML research (co-author at ICCSCI 2025) with
+ end-to-end development experience from a deployed MERN full-stack soundscape app to ML-powered tools and
+ GUIs. Preparing for Apple Developer Academy 2026, aiming to pivot into mobile/iOS engineering while bringing
+ strong product sense and advanced Mandarin proficiency for cross-cultural collaboration.
+ Education
+ BINUS University | GPA: 3.99/4.00
+ Bachelor of Science in Computer Science, Specialization in Intelligence Systems
+ Apple Developer Academy | Cohort 2026
+ Commencing March 2026
+ Awards & Honors
+ Jakarta, Indonesia
+ Aug. 2023– Feb 2027
+ Tangerang, Indonesia
+ Mar. 2026– Dec 2026
+ 2nd Winner Mandarin Story Telling Zhongwen Bisai 2024
+ Universitas Negeri Malang
+ 2nd Place Winner, Mandarin News Reading Competition
+ Pusat Bahasa Mandarin, Universitas Negeri Malang
+ Publications
+ Malang, Indonesia
+ June 2024
+ Malang, Indonesia
+ November 2024
+ Teguh, S. P., Edvilie, J.T., et al. “Enhancing Decision Tree Performance through Stacking Ensemble Learning for
+ Sentiment Analysis”, Procedia Computer Science (ICCSCI 2025). Second author; Scopus Q2
+ Note: ICCSCI 2025 acceptance rate ≈23%
+ Experience
+ Laboratory Teaching Assistant
+ BINUS University (Bina Nusantara University)
+ Sep. 2024– Jan. 2025
+ Malang, Indonesia
+ • For the Algorithm and Programming course, led weekly hands-on lab sessions for over 60 students, teaching
+ fundamental concepts of algorithms and programming logic in C.
+ • For the Commercializing Emerging Technology course, collaborated with the lead lecturer to conduct weekly
+ lab sessions for over 40 students, guiding them on the practical application of emerging technology for business
+ model creation.
+ Projects & Research
+ Enhancing Decision Tree Performance through Stacking Ensemble Learning
+ Feb. 2025– Jul. 2025
+ • Co-authored a peer-reviewed paper published at ICCSCI 2025 (Scopus Q2). Served as primary technical writer.
+ • Collaborated on model evaluation and result interpretation for a stacking ensemble (Decision Tree + SVM),
+ contributing analysis that highlighted improvements in sentiment classification accuracy (73.46% → 88.08%).
+ • Contributed to literature review and framing of findings, emphasizing the accuracy–interpretability trade-off in text
+ classification.
+ DoodleDetect– Sketch Recognition Desktop App
+ Feb. 2025– Jul. 2025
+ • Served as lead technical writer, producing detailed documentation of a hybrid pipeline (CLIP + SVM + FAISS)
+ that outperformed a VGG-16 baseline (77.2% vs 69.4% Top-1 accuracy).
+ • Independently deployed the trained model into a Tkinter-based desktop GUI, enabling users to draw, classify, and
+ view predictions in real-time.
+ • Delivered an interactive tool demonstrating how classical ML with strong embeddings can outperform deep
+ networks in resource-constrained tasks.
+ Feb. 2025– Jul. 2025
+ CeritaNusa– AI-Powered Indonesian History Learning App
+• Built the admin dashboard in React.js to manage historical content and quizzes for an NLP-powered summarization
+ feature (BERT).
+ • Integrated CRUD workflows to support content team, forming a key part of the MLOps pipeline for model
+ deployment.
+ • Contributed to system evaluation through Blackbox and User Acceptance Testing, improving stability from 1
+ failure/7 tests (v1.0) to 0 failures/8 tests (v1.3)
+ Nagiscape– Full-Stack Ambient Sound Mixer (MERN Stack)
+ Jul. 2025– Aug. 2025
+ • Developed and deployed a full-stack web application for personalized ambient soundscapes, built with React,
+ Node.js, Express, and MongoDB, and hosted on Vercel.
+ • Implemented secure authentication with JWT, password reset via email, and account management features.
+ • Engineered dynamic audio mixing with a responsive, glassmorphism-style interface; enabled users to save and load
+ custom sound “mixes.”
+ Activities
+ Staff Member, Academic Events Division & Master of Ceremonies
+ Himpunan Mahasiswa Teknik Informatika (HIMTI)
+ Mar. 2024– Dec. 2024
+ Jakarta, Indonesia
+ • Served as the primary Master of Ceremonies for HIMTI’s major academic workshops and bootcamps,
+ including “AI 101: Exploring Object Detection” with an NVIDIA expert.
+ • Led weekly supplementary instruction sessions (Responsi) in Discrete Mathematics for undergraduate
+ students, bridging theory with practical problem-solving.
+ • Acted as technical mentor and MC at Digifest AR Competition, guiding student teams while hosting the main
+ event.
+ Certifications
+ Web Development
+ • freeCodeCamp (2025): Backend Development and APIs; Relational Database; Data Visualization; Front End
+ Development Libraries; JavaScript Algorithms & Data Structures, Responsive Web Design.
+ Python and Artificial Intelligence
+ • Harvard CS50 (2024): Introduction to Python; Introduction to Artificial Intelligence with Python.
+ • NVIDIA Deep Learning Institute (2024): Fundamentals of Deep Learning.
+ Technical Skills
+ Programming Languages: Python, C, Java, JavaScript, HTML, CSS, SQL
+ AI/ML: TensorFlow, PyTorch, SciPy, Scikit-learn, Pandas, NumPy, Matplotlib, OpenCV
+ Web & App Development: React, Next.js, Tailwind CSS, RESTful API Design, Tkinter
+ Developer Tools: Git, GitHub, Docker, CI/CD Pipelines
+ Data Science & Analytics: Data Cleaning, Exploratory Data Analysis (EDA), Data Visualization
+ Soft Skills: Research & Analysis, Technical Writing & Communication, Project Coordination & Team Leadership,
+ Mentoring & Public Speaking, Proactive & Independent Learner
+ Languages
+ English (Professional Working Proficiency)
+ Indonesian (Native)
+ Chinese (Advanced Proficiency)

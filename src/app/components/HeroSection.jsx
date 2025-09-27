@@ -6,14 +6,14 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-between">
+    <section id="home" className="h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-4 md:px-8 -mt-20 pt-20">
       
       {/* Kolom kiri: teks */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-3xl"
+        className="max-w-3xl text-center md:text-left mb-8 md:mb-0"
       >
         {/* Hello intro */}
         <motion.p
@@ -54,14 +54,14 @@ export default function HeroSection() {
           />
         </motion.h2>
 
-        {/* Bio */}
+        {/* Bio - Powerful two sentences */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="text-gray-300 mb-6"
+          className="text-gray-300 mb-6 text-lg leading-relaxed max-w-2xl"
         >
-          {profile.bio}
+          {profile.tagline}
         </motion.p>
 
 
@@ -69,28 +69,41 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
-          className="flex justify-center gap-4"
+          className="flex flex-col sm:flex-row justify-center gap-4 mt-8"
         >
-          <a
-            href="/projects"
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          <motion.a
+            href="#projects"
+            whileHover={{ 
+              scale: 1.05, 
+              y: -2,
+              boxShadow: "0 20px 25px -5px rgba(59, 130, 246, 0.4), 0 10px 10px -5px rgba(59, 130, 246, 0.04)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 text-center min-w-[160px] flex items-center justify-center"
           >
-            Lihat Proyek
-          </a>
-          <a
+            View Projects
+          </motion.a>
+          <motion.a
             href={profile.resume}
             target="_blank"
-            className="bg-white/10 text-white px-6 py-2 rounded-lg font-semibold hover:bg-white/20 transition-colors backdrop-blur-md"
+            rel="noopener noreferrer"
+            whileHover={{ 
+              scale: 1.05, 
+              y: -2,
+              backgroundColor: 'rgba(255, 255, 255, 0.15)'
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white/10 backdrop-blur-lg border border-white/20 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 text-center min-w-[160px] flex items-center justify-center"
           >
-            Download CV
-          </a>
+            Download Resume
+          </motion.a>
         </motion.div>
       </motion.div>
       
       {/* Kolom kanan: 3D asset */}
-      <div className="md:w-1/2 h-72 md:h-[500px] flex items-center justify-center">
+      <div className="w-full md:w-1/2 h-72 md:h-[500px] flex items-center justify-center mt-8 md:mt-0">
         {/* Placeholder dulu */}
-        <div className="w-full h-full bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/20">
+        <div className="w-full max-w-md md:max-w-full h-full bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/20">
           <p className="text-gray-400">Tempat untuk 3D Asset-mu</p>
         </div>
       </div>
