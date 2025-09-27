@@ -100,13 +100,100 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
       
-      {/* Kolom kanan: 3D asset */}
-      <div className="w-full md:w-1/2 h-72 md:h-[500px] flex items-center justify-center mt-8 md:mt-0">
-        {/* Placeholder dulu */}
-        <div className="w-full max-w-md md:max-w-full h-full bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/20">
-          <p className="text-gray-400">Tempat untuk 3D Asset-mu</p>
+      {/* Hero Photo Section */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.0, duration: 0.8 }}
+        className="w-full md:w-1/2 h-72 md:h-[500px] flex items-center justify-center mt-8 md:mt-0"
+      >
+        <div className="relative w-full max-w-md">
+          {/* Main Hero Image Container */}
+          <motion.div 
+            className="relative"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Gradient Border */}
+            <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 p-1 shadow-2xl">
+              <motion.img 
+                src="/images/hero-photo.jpg" 
+                alt="Jesslyn Trixie Edvilie - Software Engineer & AI Researcher"
+                className="w-full h-full object-cover rounded-2xl hover:brightness-110 transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                onError={(e) => {
+                  e.target.src = '/images/placeholder-avatar.png';
+                }}
+              />
+            </div>
+
+            {/* Floating Achievement Badges */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
+              className="absolute -top-4 -right-4 w-16 h-16 bg-blue-500/20 backdrop-blur-lg rounded-2xl border border-blue-500/30 flex items-center justify-center shadow-lg hover:bg-blue-500/30 transition-all duration-300"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+            >
+              <span className="text-2xl" title="Published Researcher">🔬</span>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.6, duration: 0.6 }}
+              className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-500/20 backdrop-blur-lg rounded-2xl border border-green-500/30 flex items-center justify-center shadow-lg hover:bg-green-500/30 transition-all duration-300"
+              whileHover={{ scale: 1.1, rotate: -5 }}
+            >
+              <span className="text-2xl" title="Apple Developer Academy 2026">🍎</span>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.8, duration: 0.6 }}
+              className="absolute top-1/2 -right-8 w-12 h-12 bg-purple-500/20 backdrop-blur-lg rounded-xl border border-purple-500/30 flex items-center justify-center shadow-lg hover:bg-purple-500/30 transition-all duration-300"
+              whileHover={{ scale: 1.1, rotate: 10 }}
+            >
+              <span className="text-lg" title="Full-Stack Developer">💻</span>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 2.0, duration: 0.6 }}
+              className="absolute top-8 -left-6 w-12 h-12 bg-orange-500/20 backdrop-blur-lg rounded-xl border border-orange-500/30 flex items-center justify-center shadow-lg hover:bg-orange-500/30 transition-all duration-300"
+              whileHover={{ scale: 1.1, rotate: -10 }}
+            >
+              <span className="text-lg" title="AI/ML Engineer">🤖</span>
+            </motion.div>
+          </motion.div>
+          
+          {/* Achievement Badges Below */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.2, duration: 0.6 }}
+            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4"
+          >
+            <motion.div 
+              className="bg-white/10 backdrop-blur-lg px-4 py-2 rounded-full border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300"
+              whileHover={{ y: -2, scale: 1.05 }}
+            >
+              <span className="text-sm text-blue-400 font-medium">ICCSCI 2025</span>
+            </motion.div>
+            <motion.div 
+              className="bg-white/10 backdrop-blur-lg px-4 py-2 rounded-full border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300"
+              whileHover={{ y: -2, scale: 1.05 }}
+            >
+              <span className="text-sm text-green-400 font-medium">3.99 GPA</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Background Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-500/10 rounded-3xl blur-3xl -z-10 scale-110"></div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
