@@ -95,7 +95,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="bg-white/10 backdrop-blur-lg border border-white/20 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 text-center min-w-[160px] flex items-center justify-center"
           >
-            Download Resume
+            View Resume
           </motion.a>
         </motion.div>
       </motion.div>
