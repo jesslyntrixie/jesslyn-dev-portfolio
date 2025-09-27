@@ -80,7 +80,7 @@ export default function AboutBento() {
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Computer Science Researcher & Developer 👋
+                  Summary
                 </h3>
                 <div className="space-y-4">
                   <p className="text-gray-300 leading-relaxed text-base">
@@ -98,7 +98,7 @@ export default function AboutBento() {
                       📄 Published Researcher
                     </span>
                   </div>
-
+{/* 
                   <div className="space-y-3 pt-2">
                     <div className="flex items-start gap-3">
                       <span className="text-lg">🔬</span>
@@ -123,7 +123,7 @@ export default function AboutBento() {
                         <p className="text-xs text-gray-400">Algorithm & Programming • Commercializing Emerging Technology</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -132,8 +132,8 @@ export default function AboutBento() {
           {/* Education Spotlight */}
           <BentoBox className="md:col-span-3" delay={0.2}>
             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-2xl">🎓</span>
-              Education Excellence
+              {/* <span className="text-2xl">🎓</span> */}
+              Education
             </h3>
             <div className="space-y-4">
               <div className="border-l-4 border-blue-500/50 pl-4">
@@ -143,8 +143,8 @@ export default function AboutBento() {
                 <p className="text-xs text-gray-500">{education[0].duration}</p>
               </div>
               <div className="border-l-4 border-green-500/50 pl-4">
-                <h4 className="font-semibold text-white text-sm">{education[1].degree}</h4>
-                <p className="text-green-400 text-sm">{education[1].institution}</p>
+                <h4 className="font-semibold text-white text-sm">{education[1].institution}</h4>
+                <p className="text-green-400 text-sm">{education[1].location}</p>
                 <p className="text-xs text-gray-400">{education[1].specialization}</p>
                 <p className="text-xs text-gray-500">{education[1].duration}</p>
               </div>
@@ -152,18 +152,18 @@ export default function AboutBento() {
           </BentoBox>
 
           {/* Research Publications */}
-          <BentoBox className="md:col-span-2" delay={0.3}>
+          <BentoBox className="md:col-span-3" delay={0.3}>
             <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-              <span className="text-xl">📄</span>
+              {/* <span className="text-xl">📄</span> */}
               Published Research
             </h3>
             <div className="space-y-3">
               <div className="bg-white/5 p-3 rounded-lg border border-white/10">
                 <p className="text-sm font-medium text-blue-400">ICCSCI 2025</p>
-                <p className="text-xs text-gray-400 mb-2">Scopus Q2 • ~23% acceptance rate</p>
+                {/* <p className="text-xs text-gray-400 mb-2">Scopus Q2 • ~23% acceptance rate</p> */}
                 <p className="text-xs text-white font-medium">"Enhancing Decision Tree Performance through Stacking Ensemble Learning"</p>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">88.08% Accuracy</span>
+                  <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Scopus Q2</span>
                   <span className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">Co-author</span>
                 </div>
               </div>
