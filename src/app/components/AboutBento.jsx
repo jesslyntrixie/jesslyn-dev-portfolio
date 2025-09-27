@@ -1,7 +1,7 @@
 // app/components/AboutBento.jsx
 'use client';
 import { motion } from 'framer-motion';
-import { profile, experience, achievements, skills, education, certifications, publications } from '@/data/content';
+import { profile, experience, achievements, skills, education, certifications, publications, activities } from '@/data/content';
 
 // Enhanced Glassmorphism Bento Box component
 const BentoBox = ({ className, children, delay = 0, hover = true }) => {
@@ -216,7 +216,7 @@ export default function AboutBento() {
           {/* Languages */}
           <BentoBox delay={0.7} className="md:col-span-2">
             <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-xl">🌏</span>
+              {/* <span className="text-xl">🌏</span> */}
               Languages
             </h3>
             <div className="space-y-4">
@@ -255,7 +255,7 @@ export default function AboutBento() {
           {/* Technical Expertise with Logo Integration */}
           <BentoBox className="md:col-span-2" delay={0.6}>
             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-2xl">⚡</span>
+              {/* <span className="text-2xl">⚡</span> */}
               Technical Expertise
             </h3>
             <div className="space-y-4">
@@ -277,41 +277,71 @@ export default function AboutBento() {
             </div>
           </BentoBox>
 
-          
-
-          {/* Awards & Honors */}
-          <BentoBox className="md:col-span-2" delay={0.8}>
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-xl">🏆</span>
-              Awards & Honors
-            </h3>
-            <div className="space-y-3 max-h-80">
-              {achievements.map((achievement, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                  className="flex items-start gap-3 p-3 bg-white/5 rounded-lg border border-white/10"
-                >
-                  <span className="text-lg flex-shrink-0">{achievement.icon}</span>
-                  <div className="flex-1">
-                    <p className="font-medium text-xs text-white leading-tight mb-1">{achievement.title}</p>
-                    <p className="text-xs text-gray-300 mb-1">{achievement.description}</p>
-                    <div className="flex flex-wrap gap-1 text-xs text-gray-400">
-                      <span>{achievement.year}</span>
-                      {achievement.location && (
-                        <>
-                          <span>•</span>
-                          <span>{achievement.location}</span>
-                        </>
-                      )}
+          {/* Right Column - Awards & Activities Stacked */}
+          <div className="md:col-span-2 space-y-6">
+            {/* Awards & Honors */}
+            <BentoBox delay={0.8}>
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                {/* <span className="text-xl">🏆</span> */}
+                Awards & Honors
+              </h3>
+              <div className="space-y-3 max-h-60 overflow-y-auto">
+                {achievements.map((achievement, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                    className="flex items-start gap-3 p-3 bg-white/5 rounded-lg border border-white/10"
+                  >
+                    <span className="text-lg flex-shrink-0">{achievement.icon}</span>
+                    <div className="flex-1">
+                      <p className="font-medium text-xs text-white leading-tight mb-1">{achievement.title}</p>
+                      <p className="text-xs text-gray-300 mb-1">{achievement.description}</p>
+                      <div className="flex flex-wrap gap-1 text-xs text-gray-400">
+                        <span>{achievement.year}</span>
+                        {achievement.location && (
+                          <>
+                            <span>•</span>
+                            <span>{achievement.location}</span>
+                          </>
+                        )}
+                      </div>
                     </div>
+                  </motion.div>
+                ))}
+              </div>
+            </BentoBox>
+
+            {/* Activities */}
+            <BentoBox delay={0.9}>
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                {/* <span className="text-xl">🎯</span> */}
+                Activities
+              </h3>
+              <div className="bg-white/5 p-4 rounded-lg border border-white/10">
+                <div className="flex items-start gap-3 mb-3">
+                  {/* <span className="text-lg">🎤</span> */}
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-white">{experience[1].role}</h4>
+                    <p className="text-blue-400 text-sm">{experience[1].company}</p>
+                    <p className="text-xs text-gray-400">{experience[1].duration} • {experience[1].location}</p>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </BentoBox>
+                </div>
+                <p className="text-sm text-gray-300 mb-4">{experience[1].description}</p>
+                <div className="space-y-2">
+                  {experience[1].highlights.map((highlight, index) => (
+                    <p key={index} className="text-sm text-gray-300">• {highlight}</p>
+                  ))}
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {experience[1].technologies.map((tech, index) => (
+                    <span key={index} className="text-sm bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full border border-purple-500/30">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </BentoBox>
+          </div>
 
         </div>
       </div>
