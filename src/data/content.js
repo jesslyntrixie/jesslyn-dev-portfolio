@@ -9,7 +9,7 @@ export const profile = {
   ],
   // Two powerful sentences that capture attention
   tagline: "I translate complex AI research into intuitive applications that solve real-world problems.",
-  bio: "Computer Science undergraduate specializing in Intelligent Systems who translates complex algorithms into practical, user-facing software. I combine published applied ML research (co-author at ICCSCI 2025) withend-to-end development experience from a deployed MERN full-stack soundscape app to ML-powered tools and GUIs. Preparing for Apple Developer Academy 2026, aiming to pivot into mobile/iOS engineering while bringing strong product sense and advanced Mandarin proficiency for cross-cultural collaboration.",
+  bio: "Computer Science undergraduate specializing in Intelligent Systems who translates complex algorithms into practical, user-facing software. I combine published applied ML research (co-author at ICCSCI 2025) with end-to-end development experience from a deployed MERN full-stack soundscape app to ML-powered tools and GUIs. Preparing for Apple Developer Academy 2026, aiming to pivot into mobile/iOS engineering while bringing strong product sense and advanced Mandarin proficiency for cross-cultural collaboration.",
   location: "Jakarta, Indonesia",
   photo: "/images/profile-photo.jpg",
   email: "jesslyntrixiedev@gmail.com",
@@ -46,13 +46,20 @@ export const experience = [
     role: "Laboratory Teaching Assistant",
     company: "BINUS University",
     duration: "Sep 2024 - Jan 2025",
-    location: "Jakarta, Indonesia",
+    location: "Malang, Indonesia",
     type: "Part-time",
-    description: "Led hands-on lab sessions for 100+ students across Algorithm & Programming and Commercializing Emerging Technology courses.",
-    highlights: [
-      "Taught C programming fundamentals to 60+ students",
-      "Guided 40+ students in business model creation using emerging tech",
-      "Improved student comprehension through interactive problem-solving sessions"
+    description: "Led weekly hands-on lab sessions for over 100 students across two core computer science and business innovation courses.",
+    courses: [
+      {
+        name: "Algorithm and Programming",
+        students: "60+",
+        description: "Led weekly hands-on lab sessions for over 60 students, teaching fundamental concepts of algorithms and programming logic in C."
+      },
+      {
+        name: "Commercializing Emerging Technology",
+        students: "40+",
+        description: "Collaborated with the lead lecturer to conduct weekly lab sessions for over 40 students, guiding them on the practical application of emerging technology for business model creation."
+      }
     ],
     technologies: ["C", "Teaching", "Technical Mentoring"]
   },
@@ -195,31 +202,19 @@ export const projects = [
 
 export const achievements = [
   {
-    title: "Published Researcher at ICCSCI 2025",
-    description: "Co-authored paper on ensemble learning for sentiment analysis at prestigious international conference (Scopus Q2, ~23% acceptance rate).",
-    icon: "📄",
-    year: "2025",
-    category: "Research"
-  },
-  {
-    title: "Apple Developer Academy 2026 Selectee",
-    description: "Selected for the exclusive 2026 cohort focusing on iOS ecosystem development and native app creation.",
-    icon: "🍎", 
-    year: "2026",
-    category: "Education"
-  },
-  {
-    title: "Academic Excellence - 3.99 GPA",
-    description: "Maintained exceptional academic performance in Computer Science with Intelligence Systems specialization.",
-    icon: "🎓",
-    year: "2023-2027",
-    category: "Academic"
-  },
-  {
-    title: "Mandarin Proficiency Awards",
-    description: "2nd Place Winner in both Story Telling (Zhongwen Bisai 2024) and News Reading competitions, demonstrating advanced Chinese proficiency.",
+    title: "2nd Winner Mandarin Story Telling Zhongwen Bisai 2024",
+    description: "Universitas Negeri Malang",
     icon: "🏆",
-    year: "2024", 
+    year: "June 2024",
+    location: "Malang, Indonesia",
+    category: "Language"
+  },
+  {
+    title: "2nd Place Winner, Mandarin News Reading Competition",
+    description: "Pusat Bahasa Mandarin, Universitas Negeri Malang",
+    icon: "🏆",
+    year: "November 2024",
+    location: "Malang, Indonesia",
     category: "Language"
   }
 ];
@@ -228,22 +223,35 @@ export const education = [
   {
     institution: "BINUS University",
     degree: "Bachelor of Science in Computer Science",
-    specialization: "Intelligence Systems Specialization",
+    specialization: "Intelligence Systems",
     duration: "Aug 2023 - Feb 2027",
     location: "Jakarta, Indonesia",
     gpa: "3.99/4.00",
     status: "In Progress"
   },
   {
-    institution: "Apple Developer Academy Cohort 2026",
-    degree: "Apple Developer Academy",
-    specialization: "Application Development",
+    institution: "Apple Developer Academy",
+    degree: "iOS Development Program",
+    specialization: "Mobile App Development",
     duration: "Mar 2026 - Dec 2026", 
     location: "Tangerang, Indonesia",
     status: "Upcoming"
   }
 ];
 
+
+export const publications = [
+  {
+    title: "Enhancing Decision Tree Performance through Stacking Ensemble Learning for Sentiment Analysis",
+    authors: "Teguh, S. P., Edvilie, J.T., et al.",
+    venue: "Procedia Computer Science (ICCSCI 2025)",
+    role: "Second author",
+    ranking: "Scopus Q2",
+    acceptanceRate: "≈23%",
+    year: "2025",
+    note: "ICCSCI 2025 acceptance rate ≈23%"
+  }
+];
 
 export const certifications = [
   // Web Development - freeCodeCamp (2025)
