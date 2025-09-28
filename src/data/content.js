@@ -102,7 +102,7 @@ export const projects = [
     category: "AI/ML Engineering",
     status: "Featured",
     description: "An interactive sketch recognition system using CLIP embeddings, PCA, SVM, and FAISS for fast similarity search. Built with Python and Tkinter GUI, it achieved 77.2% Top-1 accuracy on TU-Berlin—outperforming deep learning baselines like VGG-16.",
-    role: "As Machine Learning Engineer, I built the recognition pipeline and developed the Tkinter GUI. I integrated CLIP feature extraction with PCA + SVM, implemented FAISS for retrieval, and transformed the research into a usable desktop application.",
+    role: "I developed the Tkinter-based desktop GUI that transformed the ML pipeline into a tangible, user-facing application. In addition, I served as the main technical writer, analyzing our experimental results (classical ML outperforming a deep learning baseline) and articulating them clearly in the final report.",
     tags: ["Python", "CLIP", "SVM", "FAISS", "Tkinter", "Computer Vision"],
     cover: "/images/projects/doodle-detect/cover.jpg",
     gallery: ["/images/projects/doodle-detect/1.jpg", "/images/projects/doodle-detect/2.jpg"],

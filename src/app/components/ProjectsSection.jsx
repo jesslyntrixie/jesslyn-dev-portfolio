@@ -115,14 +115,16 @@ export default function ProjectsSection() {
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{}}
           className="text-center mb-16"
         >
           <motion.p
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            viewport={{}}
             className="text-sm md:text-base font-light uppercase tracking-[0.25em] text-blue-400 mb-3"
           >
             My Work
@@ -130,17 +132,19 @@ export default function ProjectsSection() {
           
           <motion.h2
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-6"
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{}}
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-6 leading-tight"
           >
             Projects & Research
           </motion.h2>
           
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{}}
             className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto"
           >
             From AI-powered applications to full-stack solutions and published research. 
@@ -150,9 +154,10 @@ export default function ProjectsSection() {
 
         {/* Filter Tabs */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          viewport={{}}
           className="flex flex-wrap justify-center gap-3 mb-16"
         >
           {categories.map((category) => (
@@ -208,7 +213,7 @@ function ProjectCard({ project, index, onClick }) {
     <motion.div
       layout
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -30, scale: 0.9 }}
       transition={{ 
         delay: index * 0.1,
@@ -216,6 +221,7 @@ function ProjectCard({ project, index, onClick }) {
         type: "spring",
         stiffness: 100 
       }}
+      viewport={{}}
       onClick={onClick}
       className="group cursor-pointer"
     >

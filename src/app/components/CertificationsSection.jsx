@@ -26,14 +26,16 @@ export default function CertificationsSection() {
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{}}
           className="text-center mb-16"
         >
           <motion.p
             initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            viewport={{}}
             className="text-sm md:text-base font-light uppercase tracking-[0.25em] text-blue-400 mb-3"
           >
             Professional Development
@@ -41,17 +43,19 @@ export default function CertificationsSection() {
           
           <motion.h2
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-6"
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{}}
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-6 leading-tight"
           >
             Certifications
           </motion.h2>
           
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{}}
             className="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto"
           >
             Continuous learning through industry-recognized certifications from Harvard, freeCodeCamp, and NVIDIA.
@@ -60,9 +64,10 @@ export default function CertificationsSection() {
 
         {/* Filter Tabs */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          viewport={{}}
           className="flex flex-wrap justify-center gap-3 mb-16"
         >
           {categories.map((category) => (
@@ -88,8 +93,9 @@ export default function CertificationsSection() {
             <motion.div
               key={year}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              viewport={{}}
             >
               {/* Year Header */}
               <div className="flex items-center mb-8">
