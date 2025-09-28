@@ -356,7 +356,7 @@ function ProjectModal({ project, onClose }) {
         onClick={(e) => e.stopPropagation()}
         className="bg-gray-900/40 backdrop-blur-lg border border-blue-400/30 rounded-2xl 
                    max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl shadow-blue-500/20
-                   ring-1 ring-blue-500/20"
+                   ring-1 ring-blue-500/20 custom-scrollbar"
       >
           {/* Header */}
           <div className="sticky top-0 bg-gray-900/60 backdrop-blur-lg border-b border-white/10 p-6 z-10">

@@ -49,12 +49,29 @@ export default function AboutBento() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-sm md:text-base font-light uppercase tracking-[0.25em] text-blue-400 mb-3"
+          >
+            Get to Know Me
+          </motion.p>
+          
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-6">
             About Me
           </h2>
-          {/* <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            {profile.tagline}
-          </p> */}
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed"
+          >
+            My journey, achievements, and the experiences that shape my approach to technology and innovation.
+          </motion.p>
         </motion.div>
 
         {/* Enhanced Bento Grid */}
@@ -282,7 +299,7 @@ export default function AboutBento() {
                 {/* <span className="text-xl">🏆</span> */}
                 Awards & Honors
               </h3>
-              <div className="space-y-3 max-h-60 overflow-y-auto">
+              <div className="space-y-3 max-h-60 overflow-y-auto custom-scrollbar">
                 {achievements.map((achievement, index) => (
                   <motion.div 
                     key={index}

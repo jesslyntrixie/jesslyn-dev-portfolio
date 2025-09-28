@@ -60,8 +60,7 @@ export default function Footer() {
               {profile.name}
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Software Engineer & AI Researcher passionate about creating innovative solutions 
-              that bridge the gap between complex algorithms and real-world applications.
+              Building the future through code, research, and innovation.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (

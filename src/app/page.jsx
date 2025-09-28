@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 export default function HomePage() {
   return (
     <>
-      <main className="container mx-auto px-4 pt-20 md:pt-24">
+      <main className="container mx-auto px-4">
         <HeroSection />
         <AboutBento />
         

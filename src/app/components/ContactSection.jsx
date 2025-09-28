@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { profile } from '@/data/content';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -26,15 +27,53 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission (replace with actual submission logic)
-    setTimeout(() => {
+    try {
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+      
+      // Check if EmailJS is configured
+      if (!serviceId || !templateId || !publicKey || 
+          serviceId === 'your_service_id' || 
+          templateId === 'your_template_id' || 
+          publicKey === 'your_public_key') {
+        
+        // Fallback to mailto if EmailJS not configured
+        const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+          `Hi Jesslyn,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )}`;
+        
+        window.open(mailtoUrl, '_blank');
+        setSubmitStatus('mailto');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        return;
+      }
+      
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Jesslyn Trixie Edvilie',
+        to_email: profile.email,
+      };
+      
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
       setSubmitStatus('success');
-      setIsSubmitting(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
       
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus(null), 3000);
-    }, 1500);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   const contactMethods = [
@@ -81,7 +120,7 @@ export default function ContactSection() {
       title: "Location",
       value: profile.location,
       href: null,
-      description: "Based in Jakarta, Indonesia"
+      description: "Open for remote work globally."
     }
   ];
 
@@ -96,11 +135,10 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-6">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            I'm always interested in new opportunities and collaborations. 
-            Whether it's a project, research, or just a chat about technology.
+            Ready to collaborate on your next project or discuss new opportunities.
           </p>
         </motion.div>
 
@@ -115,11 +153,6 @@ export default function ContactSection() {
           >
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                I'm currently open to new opportunities in software engineering, AI research, 
-                and full-stack development. Let's discuss how we can work together to create 
-                something amazing.
-              </p>
             </div>
 
             <div className="grid gap-6">
@@ -184,9 +217,39 @@ export default function ContactSection() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 rounded-lg bg-green-500/20 border border-green-500/50 text-green-300"
+                  className="mb-6 p-4 rounded-lg bg-green-500/20 border border-green-500/50 text-green-300 flex items-center"
                 >
+                  <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                  </svg>
                   Thanks for your message! I'll get back to you soon.
+                </motion.div>
+              )}
+              
+              {submitStatus === 'mailto' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 rounded-lg bg-blue-500/20 border border-blue-500/50 text-blue-300 flex items-center"
+                >
+                  <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                  Email client opened! If it didn't work, please email me directly at {profile.email}
+                </motion.div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 rounded-lg bg-red-500/20 border border-red-500/50 text-red-300 flex items-center"
+                >
+                  <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                  </svg>
+                  Failed to send message. Please try again or contact me directly at {profile.email}
                 </motion.div>
               )}
 
