@@ -6,14 +6,14 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-4 md:px-8 -mt-20 pt-20">
+    <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-4 md:px-8 pt-24 md:pt-20 pb-8">
       
       {/* Kolom kiri: teks */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-3xl text-center md:text-left mb-8 md:mb-0"
+        className="max-w-3xl text-center md:text-left mb-12 md:mb-0 w-full md:w-auto"
       >
         {/* Hello intro */}
         <motion.p
@@ -69,7 +69,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
-          className="flex flex-col sm:flex-row justify-center gap-4 mt-8"
+          className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 mt-8"
         >
           <motion.a
             href="#projects"
@@ -79,7 +79,7 @@ export default function HeroSection() {
               boxShadow: "0 20px 25px -5px rgba(59, 130, 246, 0.4), 0 10px 10px -5px rgba(59, 130, 246, 0.04)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 text-center min-w-[160px] flex items-center justify-center"
+            className="bg-blue-500/20 backdrop-blur-lg border border-blue-400/40 text-blue-200 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-blue-500/30 hover:border-blue-400/60 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 text-center w-full sm:w-auto sm:min-w-[160px] flex items-center justify-center"
           >
             View Projects
           </motion.a>
@@ -90,10 +90,10 @@ export default function HeroSection() {
             whileHover={{ 
               scale: 1.05, 
               y: -2,
-              backgroundColor: 'rgba(255, 255, 255, 0.15)'
+              backgroundColor: 'rgba(255, 255, 255, 0.20)'
             }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white/10 backdrop-blur-lg border border-white/20 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 text-center min-w-[160px] flex items-center justify-center"
+            className="bg-white/10 backdrop-blur-lg border border-white/20 text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 text-center w-full sm:w-auto sm:min-w-[160px] flex items-center justify-center"
           >
             View Resume
           </motion.a>
@@ -105,9 +105,9 @@ export default function HeroSection() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.0, duration: 0.8 }}
-        className="w-full md:w-1/2 h-72 md:h-[500px] flex items-center justify-center mt-8 md:mt-0"
+        className="w-full md:w-1/2 flex items-center justify-center mt-8 md:mt-0 px-4 md:px-0"
       >
-        <div className="relative w-full max-w-md">
+        <div className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-md">
           {/* Main Hero Image Container */}
           <motion.div 
             className="relative"
@@ -115,15 +115,12 @@ export default function HeroSection() {
             transition={{ duration: 0.3 }}
           >
             {/* Gradient Border */}
-            <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 p-1 shadow-2xl">
+            <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 p-1 shadow-2xl mx-auto">
               <motion.img 
                 src="/images/hero-photo.jpg" 
                 alt="Jesslyn Trixie Edvilie - Software Engineer & AI Researcher"
                 className="w-full h-full object-cover rounded-2xl hover:brightness-110 transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
-                onError={(e) => {
-                  e.target.src = '/images/placeholder-avatar.png';
-                }}
               />
             </div>
 
@@ -132,7 +129,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4, duration: 0.6 }}
-              className="absolute -top-6 -right-6 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-lg rounded-2xl border border-blue-500/30 p-4 shadow-xl hover:shadow-blue-500/25 hover:border-blue-400/50 transition-all duration-300 min-w-[120px]"
+              className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-lg rounded-2xl border border-blue-500/30 p-3 sm:p-4 shadow-xl hover:shadow-blue-500/25 hover:border-blue-400/50 transition-all duration-300 min-w-[100px] sm:min-w-[120px]"
               whileHover={{ scale: 1.05, y: -5 }}
             >
               <div className="text-center">
@@ -150,7 +147,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6, duration: 0.6 }}
-              className="absolute -bottom-6 -left-6 bg-gradient-to-r from-emerald-600/25 to-teal-600/25 backdrop-blur-lg rounded-2xl border border-emerald-400/40 p-4 shadow-xl hover:shadow-emerald-500/25 hover:border-emerald-300/50 transition-all duration-300 min-w-[120px]"
+              className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-gradient-to-r from-emerald-600/25 to-teal-600/25 backdrop-blur-lg rounded-2xl border border-emerald-400/40 p-3 sm:p-4 shadow-xl hover:shadow-emerald-500/25 hover:border-emerald-300/50 transition-all duration-300 min-w-[100px] sm:min-w-[120px]"
               whileHover={{ scale: 1.05, y: 5 }}
             >
               <div className="text-center">
@@ -168,7 +165,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.8, duration: 0.6 }}
-              className="absolute top-1/2 -right-10 transform -translate-y-1/2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-xl border border-purple-500/30 p-3 shadow-xl hover:shadow-purple-500/25 hover:border-purple-400/50 transition-all duration-300 min-w-[100px]"
+              className="absolute top-1/2 -right-6 sm:-right-10 transform -translate-y-1/2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-lg rounded-xl border border-purple-500/30 p-2 sm:p-3 shadow-xl hover:shadow-purple-500/25 hover:border-purple-400/50 transition-all duration-300 min-w-[80px] sm:min-w-[100px]"
               whileHover={{ scale: 1.05, x: 5 }}
             >
               <div className="text-center">
@@ -185,7 +182,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.0, duration: 0.6 }}
-              className="absolute top-8 -left-8 bg-gradient-to-r from-slate-700/40 to-gray-800/40 backdrop-blur-lg rounded-xl border border-slate-600/50 p-3 shadow-xl hover:shadow-slate-600/30 hover:border-slate-500/60 transition-all duration-300 min-w-[100px]"
+              className="absolute top-6 sm:top-8 -left-6 sm:-left-8 bg-gradient-to-r from-slate-700/40 to-gray-800/40 backdrop-blur-lg rounded-xl border border-slate-600/50 p-2 sm:p-3 shadow-xl hover:shadow-slate-600/30 hover:border-slate-500/60 transition-all duration-300 min-w-[80px] sm:min-w-[100px]"
               whileHover={{ scale: 1.05, x: -5 }}
             >
               <div className="text-center">
@@ -204,7 +201,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.2, duration: 0.6 }}
-            className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex gap-6"
+            className="absolute -bottom-8 sm:-bottom-12 left-1/2 transform -translate-x-1/2 flex gap-4 sm:gap-6"
           >
             {/* <motion.div 
               className="bg-gradient-to-r from-blue-600/30 to-cyan-600/30 backdrop-blur-lg px-5 py-3 rounded-2xl border border-blue-400/40 shadow-xl hover:shadow-blue-500/30 hover:border-blue-300/60 transition-all duration-300"
@@ -216,12 +213,12 @@ export default function HeroSection() {
               </div>
             </motion.div> */}
             <motion.div 
-              className="bg-gradient-to-r from-orange-600/30 to-amber-600/30 backdrop-blur-lg px-6 py-4 rounded-2xl border border-orange-400/40 shadow-xl hover:shadow-orange-500/30 hover:border-orange-300/60 transition-all duration-300 min-w-[140px]"
+              className="bg-gradient-to-r from-orange-600/30 to-amber-600/30 backdrop-blur-lg px-4 sm:px-6 py-3 sm:py-4 rounded-2xl border border-orange-400/40 shadow-xl hover:shadow-orange-500/30 hover:border-orange-300/60 transition-all duration-300 min-w-[120px] sm:min-w-[140px]"
               whileHover={{ y: -3, scale: 1.08 }}
             >
               <div className="text-center">
-                <div className="w-8 h-8 mx-auto mb-2 bg-orange-500/30 rounded-lg flex items-center justify-center">
-                  <svg className="w-5 h-5 text-orange-200" fill="currentColor" viewBox="0 0 20 20">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-1 sm:mb-2 bg-orange-500/30 rounded-lg flex items-center justify-center">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-orange-200" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                   </svg>
                 </div>

@@ -1,7 +1,7 @@
 // app/page.jsx
 import HeroSection from './components/HeroSection';
 import AboutBento from './components/AboutBento';
-// import FeaturedProjects from './components/FeaturedProjects';
+import ProjectsSection from './components/ProjectsSection';
 // import Contact from './components/Contact';
 
 export default function HomePage() {
@@ -10,15 +10,7 @@ export default function HomePage() {
       <HeroSection />
       <AboutBento />
       
-      {/* Placeholder sections for navigation */}
-      <section id="projects" className="min-h-screen flex items-center justify-center py-16">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent mb-4">
-            Projects
-          </h2>
-          <p className="text-gray-400">Coming Soon - Your amazing projects will be showcased here!</p>
-        </div>
-      </section>
+      <ProjectsSection />
       
       <section id="experience" className="min-h-screen flex items-center justify-center py-16">
         <div className="text-center">

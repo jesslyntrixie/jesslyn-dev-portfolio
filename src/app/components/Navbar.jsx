@@ -111,17 +111,19 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-3"
             >
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 flex items-center justify-center">
-                <span className="text-white font-bold text-lg md:text-xl">
-                  {profile.name.split(' ').map(name => name[0]).join('')}
-                </span>
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 p-0.5 flex items-center justify-center">
+                <img 
+                  src="/images/hero-photo.jpg"
+                  alt={profile.name}
+                  className="w-full h-full object-cover rounded-md"
+                />
               </div>
               <div className="hidden sm:block">
                 <h3 className="font-semibold text-white text-lg">
                   {profile.name.split(' ')[0]}
                 </h3>
                 <p className="text-xs text-gray-400 font-mono">
-                  {profile.titles[0].split(' ')[0]} {profile.titles[0].split(' ')[1]}
+                  Portfolio
                 </p>
               </div>
             </motion.div>
@@ -161,7 +163,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200"
+                className="px-4 py-2 bg-blue-500/20 backdrop-blur-lg border border-blue-400/40 text-blue-200 rounded-lg font-semibold hover:bg-blue-500/30 hover:border-blue-400/60 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200"
               >
                 Resume
               </motion.a>
@@ -275,7 +277,7 @@ export default function Navbar() {
                         {profile.name.split(' ')[0]}
                       </h3>
                       <p className="text-xs text-gray-400 font-mono">
-                        {profile.titles[0].split(' ')[0]} {profile.titles[0].split(' ')[1]}
+                        Portfolio
                       </p>
                     </div>
                   </div>
@@ -308,7 +310,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-center block mb-4 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200"
+                    className="w-full px-4 py-3 bg-blue-500/20 backdrop-blur-lg border border-blue-400/40 text-blue-200 rounded-lg font-semibold text-center block mb-4 hover:bg-blue-500/30 hover:border-blue-400/60 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200"
                   >
                     Download Resume
                   </motion.a>

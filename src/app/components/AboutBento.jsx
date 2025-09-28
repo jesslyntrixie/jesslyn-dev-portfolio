@@ -69,9 +69,6 @@ export default function AboutBento() {
                     src={profile.photo} 
                     alt="Jesslyn Trixie Edvilie"
                     className="w-full h-full object-cover rounded-xl"
-                    onError={(e) => {
-                      e.target.src = '/images/placeholder-avatar.png';
-                    }}
                   />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-green-500 rounded-full border-4 border-gray-900 flex items-center justify-center">

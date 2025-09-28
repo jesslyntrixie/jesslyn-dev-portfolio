@@ -1,5 +1,7 @@
 // src/data/content.js
 
+import { m } from "framer-motion";
+
 export const profile = {
   name: "Jesslyn Trixie Edvilie",
   titles: [
@@ -79,126 +81,95 @@ export const experience = [
   }
 ];
 
+
 export const projects = [
-  {
-    id: "doodle-detect",
-    title: "DoodleDetect: Sketch Recognition App",
-    category: "AI/ML Engineering",
-    status: "Featured", // Featured, Completed, In Progress
-    shortDescription: "Desktop GUI app with hybrid ML pipeline (CLIP + SVM + FAISS) that outperformed VGG-16 baseline by 7.8% in sketch classification.",
-    fullDescription: "Engineered a sophisticated sketch recognition system combining classical ML with modern embeddings. Served as lead technical writer and independently deployed the trained model into an interactive Tkinter GUI.",
-    impact: {
-      metric: "77.2% vs 69.4%",
-      description: "Top-1 accuracy improvement over deep learning baseline"
-    },
-    tags: ["Python", "CLIP", "SVM", "FAISS", "Tkinter", "Computer Vision"],
-    technologies: {
-      "AI/ML": ["CLIP Embeddings", "SVM", "FAISS", "Scikit-learn"],
-      "GUI": ["Tkinter", "Real-time Processing"],
-      "Tools": ["Python", "Model Deployment"]
-    },
-    thumbnail: "/images/projects/doodle-detect/cover.png",
-    gallery: [
-      "/images/projects/doodle-detect/demo.png",
-      "/images/projects/doodle-detect/architecture.png",
-      "/images/projects/doodle-detect/results.png"
-    ],
-    githubUrl: "https://github.com/jesslyntrixie/doodledetect",
-    demoUrl: null,
-    featured: true,
-    timeline: "Feb 2025 - Jul 2025"
-  },
   {
     id: "nagiscape",
     title: "Nagiscape: Ambient Sound Mixer",
     category: "Full-Stack Development",
     status: "Featured",
-    shortDescription: "MERN stack web application for personalized ambient soundscapes with dynamic audio mixing and glassmorphism UI.",
-    fullDescription: "Developed and deployed a full-stack ambient sound mixer enabling users to create, save, and share custom soundscapes. Features secure authentication, email-based password reset, and responsive design.",
-    impact: {
-      metric: "Fully Deployed",
-      description: "Production-ready app on Vercel with user authentication"
-    },
+    description: "A full-stack MERN application that allows users to mix curated music with ambient sounds (rain, ocean, fireplace) to create personalized soundscapes. Includes JWT-based authentication, email verification, password reset, account management, and a modern glassmorphism UI deployed on Vercel.",
+    role: "As the sole developer, I handled both frontend (React, Tailwind, Vite) and backend (Node.js, Express, MongoDB) development. I implemented authentication, audio player logic, and responsive UI design, ensuring seamless integration between backend and frontend.",
     tags: ["React", "Node.js", "MongoDB", "Express", "JWT", "Vercel"],
-    technologies: {
-      "Frontend": ["React.js", "Tailwind CSS", "Glassmorphism Design"],
-      "Backend": ["Node.js", "Express.js", "JWT Authentication"],
-      "Database": ["MongoDB", "User Management"],
-      "Deployment": ["Vercel", "Email Integration"]
-    },
-    thumbnail: "/images/projects/nagiscape/cover.png",
-    gallery: [
-      "/images/projects/nagiscape/interface.png",
-      "/images/projects/nagiscape/mixer.png",
-      "/images/projects/nagiscape/auth.png"
-    ],
+    cover: "/images/projects/nagiscape/cover.jpg",
+    gallery: ["/images/projects/nagiscape/1.jpg", "/images/projects/nagiscape/2.jpg"],
     githubUrl: "https://github.com/jesslyntrixie/nagiscape",
-    demoUrl: "https://nagiscape.vercel.app",
-    featured: true,
-    timeline: "Jul 2025 - Aug 2025"
+    demoUrl: "https://nagiscape.vercel.app"
   },
   {
-    id: "cerita-nusa",
-    title: "CeritaNusa: AI History Learning Platform",
-    category: "Web Development & AI",
-    status: "Completed",
-    shortDescription: "React.js admin dashboard powering an AI summarization engine for Indonesian cultural history with BERT integration.",
-    fullDescription: "Built the administrative backbone for an NLP-powered learning platform. Developed CRUD workflows supporting content teams and contributed to MLOps pipeline for BERT model deployment.",
-    impact: {
-      metric: "0 failures/8 tests",
-      description: "Improved system stability from v1.0 to v1.3"
-    },
-    tags: ["React.js", "BERT", "Admin Dashboard", "MLOps", "Educational Tech"],
-    technologies: {
-      "Frontend": ["React.js", "JavaScript", "Admin Interface"],
-      "AI/ML": ["BERT", "NLP", "Content Summarization"],
-      "Backend": ["CRUD Operations", "Content Management"],
-      "Testing": ["UAT", "System Evaluation"]
-    },
-    thumbnail: "/images/projects/cerita-nusa/cover.png",
-    gallery: [
-      "/images/projects/cerita-nusa/dashboard.png",
-      "/images/projects/cerita-nusa/content.png"
-    ],
-    githubUrl: "https://github.com/jesslyntrixie/cerita-nusa",
-    demoUrl: "https://linktr.ee/ceritanusa",
-    featured: false,
-    timeline: "Feb 2025 - Jul 2025"
+    id: "doodle-detect",
+    title: "DoodleDetect: Sketch Recognition System",
+    category: "AI/ML Engineering",
+    status: "Featured",
+    description: "An interactive sketch recognition system using CLIP embeddings, PCA, SVM, and FAISS for fast similarity search. Built with Python and Tkinter GUI, it achieved 77.2% Top-1 accuracy on TU-Berlin—outperforming deep learning baselines like VGG-16.",
+    role: "As Machine Learning Engineer, I built the recognition pipeline and developed the Tkinter GUI. I integrated CLIP feature extraction with PCA + SVM, implemented FAISS for retrieval, and transformed the research into a usable desktop application.",
+    tags: ["Python", "CLIP", "SVM", "FAISS", "Tkinter", "Computer Vision"],
+    cover: "/images/projects/doodle-detect/cover.jpg",
+    gallery: ["/images/projects/doodle-detect/1.jpg", "/images/projects/doodle-detect/2.jpg"],
+    githubUrl: "https://github.com/jesslyntrixie/doodledetect"
   },
   {
-    id: "research-sentiment",
-    title: "Stacking Ensemble for Sentiment Analysis",
-    category: "Research & Publication",
+    id: "decisiontrees",
+    title: "Enhancing Decision Tree Performance through Stacking Ensemble Learning",
+    category: "AI Research",
     status: "Published",
-    shortDescription: "Co-authored research published at ICCSCI 2025 (Scopus Q2) improving sentiment classification accuracy from 73.46% to 88.08%.",
-    fullDescription: "Served as primary technical writer for peer-reviewed research on stacking ensemble learning. Collaborated on model evaluation combining Decision Tree + SVM for enhanced sentiment classification performance.",
-    impact: {
-      metric: "88.08% accuracy",
-      description: "14.62% improvement in sentiment classification"
-    },
-    tags: ["Research", "Machine Learning", "Ensemble Methods", "Publication", "Academic Writing"],
-    technologies: {
-      "AI/ML": ["Decision Trees", "SVM", "Stacking Ensemble"],
-      "Research": ["Academic Writing", "Model Evaluation"],
-      "Publication": ["Scopus Q2", "Peer Review"]
-    },
-    thumbnail: "/images/projects/research/cover.png",
-    gallery: [
-      "/images/projects/research/paper.png",
-      "/images/projects/research/results.png"
-    ],
-    githubUrl: null,
-    demoUrl: "https://doi.org/your-paper-doi", // Add when available
-    featured: true,
-    timeline: "Feb 2025 - Jul 2025",
-    publication: {
-      title: "Enhancing Decision Tree Performance through Stacking Ensemble Learning for Sentiment Analysis",
-      venue: "ICCSCI 2025",
-      type: "Scopus Q2",
-      acceptanceRate: "~23%"
-    }
+    description: "A research project proposing a stacking ensemble pipeline to improve sentiment analysis accuracy by combining diverse base learners. Achieved significant performance gains over single decision tree models, published in Procedia Computer Science (ICCSCI 2025, Scopus Q2).",
+    role: "As Paper Coordinator, I structured the research paper, integrated team contributions, and ensured methodological clarity. I translated experimental results into persuasive academic writing, making the work accessible to the research community.",
+    tags: ["Ensemble Learning", "Decision Trees", "Sentiment Analysis", "Scikit-learn"],
+    cover: "/images/projects/decisiontrees/cover.jpg",
+    gallery: ["/images/projects/decisiontrees/1.jpg", "/images/projects/decisiontrees/2.jpg"],
+    demoUrl: "https://doi.org/your-paper-doi"
+  },
+  {
+    id: "alzheimers-cnn",
+    title: "Deep Learning for Alzheimer’s MRI Classification",
+    category: "AI Research",
+    status: "Completed",
+    description: "Benchmarked CNN architectures (EfficientNet, ResNet, InceptionV4, MobileNetV3, VGG-16) for Alzheimer’s detection from MRI scans. Achieved 98% accuracy, providing insights on balancing predictive power with clinical interpretability.",
+    role: "As Paper Coordinator, I led experiment design, coordinated training and evaluation, and authored the final manuscript. My focus was integrating team contributions into a coherent and clinically relevant narrative.",
+    tags: ["Deep Learning", "CNNs", "TensorFlow", "Healthcare AI"],
+    cover: "/images/projects/alzheimers-cnn/cover.jpg",
+    gallery: ["/images/projects/alzheimers-cnn/1.jpg", "/images/projects/alzheimers-cnn/2.jpg"],
+    demoUrl: "https://linktr.ee/alzheimercnn"
+  },
+  {
+    id: "ceritanusa",
+    title: "CeritaNusa: AI-Powered Indonesian History Learning App",
+    category: "Mobile & Web Development",
+    status: "Completed",
+    description: "An Android application built with Flutter and Django REST API that leverages a fine-tuned AI summarization model to deliver concise Indonesian history content. Designed with an interactive, accessible educational interface for students and the public.",
+    role: "As Frontend Developer (Admin Page), I customized a React.js admin dashboard for the content team. I modified components and optimized the workflow so non-technical members could seamlessly manage and publish historical content.",
+    tags: ["Flutter", "Django REST", "React.js", "Education", "AI Summarization"],
+    cover: "/images/projects/ceritanusa/cover.png",
+    gallery: ["/images/projects/ceritanusa/1.png", "/images/projects/ceritanusa/2.png", "/images/projects/ceritanusa/3.png"],
+    githubUrl: "https://github.com/jesslyntrixie/cerita-nusa",
+    demoUrl: "https://linktr.ee/ceritanusa"
+  },
+  {
+    id: "pomoducky",
+    title: "PomoDucky: Pomodoro Timer App",
+    category: "Productivity & Desktop Apps",
+    status: "Completed",
+    description: "A desktop productivity tool built with Electron + React, combining the Pomodoro technique with a pixel-art duck. Features always-on-top mode, customizable session lengths, animated themes, and sound notifications.",
+    role: "As sole developer, I designed and built the entire app, from timer logic and UI to packaging as a cross-platform desktop application.",
+    tags: ["Electron.js", "React", "Productivity Tool"],
+    cover: "/images/projects/pomoducky/cover.png",
+    githubUrl: "https://github.com/jesslyntrixie/pomoducky-desktop"
+  },
+  {
+    id: "calculator",
+    title: "Python Tkinter Calculator",
+    category: "Learning Project",
+    status: "Completed",
+    description: "Made as the final project for Harvard CS50's Introduction to Python certification. A simple calculator with a Tkinter GUI supporting arithmetic operations, clear/reset, and unit testing via pytest.",
+    role: "As sole developer, I implemented GUI logic with Tkinter and added test coverage with pytest, exploring GUI development in Python.",
+    tags: ["Python", "Tkinter", "GUI"],
+    cover: "/images/projects/calculator/cover.png",
+    githubUrl: "https://github.com/jesslyntrixie/python-calculator",
+    demoUrl: "https://www.youtube.com/watch?v=_hm-0D1bCBE"
   }
 ];
+
 
 export const achievements = [
   {
@@ -259,57 +230,66 @@ export const certifications = [
     title: "Backend Development and APIs",
     issuer: "freeCodeCamp",
     year: "2025",
-    category: "Web Development"
+    category: "Web Development",
+    link: "https://freecodecamp.org/certification/jesslyntrixie/back-end-development-and-apis"
   },
   {
     title: "Relational Database",
     issuer: "freeCodeCamp", 
     year: "2025",
-    category: "Web Development"
+    category: "Web Development",
+    link: "https://freecodecamp.org/certification/jesslyntrixie/relational-database-v8"
   },
   {
     title: "Data Visualization",
     issuer: "freeCodeCamp",
     year: "2025", 
-    category: "Web Development"
+    category: "Web Development",
+    link: "https://freecodecamp.org/certification/jesslyntrixie/data-visualization"
   },
   {
     title: "Front End Development Libraries",
     issuer: "freeCodeCamp",
     year: "2025",
-    category: "Web Development"
+    category: "Web Development",
+    link: "https://freecodecamp.org/certification/jesslyntrixie/front-end-development-libraries"
   },
   {
     title: "JavaScript Algorithms & Data Structures",
     issuer: "freeCodeCamp",
     year: "2025",
-    category: "Web Development"
+    category: "Web Development",
+    link: "https://freecodecamp.org/certification/jesslyntrixie/javascript-algorithms-and-data-structures-v8"
   },
   {
     title: "Responsive Web Design",
     issuer: "freeCodeCamp",
     year: "2025",
-    category: "Web Development"
+    category: "Web Development",
+    link: "https://freecodecamp.org/certification/jesslyntrixie/responsive-web-design"
   },
   // Python and AI - Harvard CS50 (2024)
   {
     title: "Introduction to Python",
     issuer: "Harvard CS50",
     year: "2024",
-    category: "Programming"
+    category: "Programming",
+    link: "https://certificates.cs50.io/65b5dcc3-f767-45c1-9750-8656e521a41f.pdf?size=letter"
   },
   {
     title: "Introduction to Artificial Intelligence with Python",
     issuer: "Harvard CS50",
     year: "2024",
-    category: "AI/ML"
+    category: "AI/ML",
+    link: "https://certificates.cs50.io/73ffce71-6548-434b-93ef-81a76d0f5ecd.pdf?size=letter"
   },
   // NVIDIA (2024)
   {
     title: "Fundamentals of Deep Learning",
     issuer: "NVIDIA Deep Learning Institute",
     year: "2024",
-    category: "AI/ML"
+    category: "AI/ML",
+    link: "https://learn.nvidia.com/certificates?id=ggOlc2nYRmKaUimLHis_5g"
   }
 ];
 
