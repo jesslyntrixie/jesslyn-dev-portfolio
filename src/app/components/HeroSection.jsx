@@ -6,7 +6,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-4 md:px-8 pt-24 md:pt-20 pb-8">
+    <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-between px-4 md:px-8">
       
       {/* Kolom kiri: teks */}
       <motion.div
