@@ -92,7 +92,7 @@ export const projects = [
     role: "As the sole developer, I handled both frontend (React, Tailwind, Vite) and backend (Node.js, Express, MongoDB) development. I implemented authentication, audio player logic, and responsive UI design, ensuring seamless integration between backend and frontend.",
     tags: ["React", "Node.js", "MongoDB", "Express", "JWT", "Vercel"],
     cover: "/images/projects/nagiscape/cover.jpg",
-    gallery: ["/images/projects/nagiscape/1.jpg", "/images/projects/nagiscape/2.jpg"],
+    gallery: ["/images/projects/nagiscape/1.jpg", "/images/projects/nagiscape/2.jpg", "/images/projects/nagiscape/3.jpg", "/images/projects/nagiscape/4.jpg"],
     githubUrl: "https://github.com/jesslyntrixie/nagiscape",
     demoUrl: "https://nagiscape.vercel.app"
   },

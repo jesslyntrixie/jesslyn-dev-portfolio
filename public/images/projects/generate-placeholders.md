@@ -3,20 +3,24 @@
 ## 📁 Folder Structure
 ```
 public/images/projects/
-├── nagiscape/
-│   ├── cover.jpg          # Landing page/main interface
-│   ├── 1.jpg             # Sound mixer interface
-│   └── 2.jpg             # User dashboard
 ├── doodle-detect/
-│   └── cover.jpg          # App interface/demo
-├── alzheimers-cnn/
-│   └── cover.jpg          # Research overview/results
-├── ceritanusa/
-│   └── cover.jpg          # Admin dashboard
-├── pomoducky/
-│   └── cover.jpg          # Desktop app interface
-└── calculator/
-    └── cover.jpg          # Calculator GUI
+│   ├── cover.jpg          # Main project hero
+│   ├── 1.jpg             # App interface
+│   ├── 2.jpg             # Architecture diagram  
+│   └── 3.jpg             # Results/performance
+├── nagiscape/
+│   ├── cover.jpg          # Landing page
+│   ├── 1.jpg             # Sound mixer interface
+│   ├── 2.jpg             # User dashboard
+│   └── 3.jpg             # Mobile responsive
+├── cerita-nusa/
+│   ├── cover.jpg          # Admin dashboard
+│   ├── 1.jpg             # Content management
+│   └── 2.jpg             # AI summarization
+└── research/
+    ├── cover.jpg          # Research overview
+    ├── 1.jpg             # Methodology diagram
+    └── 2.jpg             # Results visualization
 ```
 
 ## 🎨 Image Specifications - FLEXIBLE SIZES!
