@@ -33,11 +33,20 @@ export default function ContactSection() {
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
       
+      // Debug logging (remove in production)
+      console.log('EmailJS Config:', {
+        serviceId: serviceId ? 'Set' : 'Missing',
+        templateId: templateId ? 'Set' : 'Missing', 
+        publicKey: publicKey ? 'Set' : 'Missing'
+      });
+      
       // Check if EmailJS is configured
       if (!serviceId || !templateId || !publicKey || 
           serviceId === 'your_service_id' || 
           templateId === 'your_template_id' || 
           publicKey === 'your_public_key') {
+        
+        console.log('EmailJS not configured, using mailto fallback');
         
         // Fallback to mailto if EmailJS not configured
         const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
@@ -61,14 +70,23 @@ export default function ContactSection() {
       };
       
       // Send email using EmailJS
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      console.log('Sending email via EmailJS...');
+      const result = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      console.log('EmailJS Success:', result);
       
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       
     } catch (error) {
-      console.error('Failed to send email:', error);
-      setSubmitStatus('error');
+      console.error('EmailJS Error:', error);
+      
+      // If EmailJS fails, fallback to mailto
+      const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+        `Hi Jesslyn,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      
+      window.open(mailtoUrl, '_blank');
+      setSubmitStatus('mailto');
     } finally {
       setIsSubmitting(false);
       // Reset status after 5 seconds

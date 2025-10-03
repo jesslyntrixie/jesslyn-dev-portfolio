@@ -82,7 +82,7 @@ export default function CertificationsSection() {
                   : 'bg-gray-900/40 backdrop-blur-lg border border-white/10 text-gray-300 hover:text-white hover:bg-gray-900/60'
               }`}
             >
-              {category === 'all' ? 'All Certifications' : category}
+              {category === 'all' ? 'All' : category}
             </motion.button>
           ))}
         </motion.div>

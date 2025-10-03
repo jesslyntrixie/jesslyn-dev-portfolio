@@ -172,7 +172,7 @@ export default function ProjectsSection() {
                   : 'bg-gray-900/40 backdrop-blur-lg border border-white/10 text-gray-300 hover:text-white hover:bg-gray-900/60'
               }`}
             >
-              {category === 'all' ? 'All Projects' : category}
+              {category === 'all' ? 'All' : category}
             </motion.button>
           ))}
         </motion.div>
@@ -232,7 +232,7 @@ function ProjectCard({ project, index, onClick }) {
                       hover:border-blue-400/60 hover:ring-2 hover:ring-purple-500/40">
         
           {/* Status Badge */}
-          <div className="absolute top-4 left-4 z-10">
+          {/* <div className="absolute top-4 left-4 z-10">
             <span className={`px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm ${
               project.status === 'Featured' 
                 ? 'bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-400 border border-yellow-500/30'
@@ -242,7 +242,7 @@ function ProjectCard({ project, index, onClick }) {
             }`}>
               {project.status}
             </span>
-          </div>
+          </div> */}
 
           {/* Project Thumbnail */}
           <div className="relative aspect-[16/10] bg-slate-800 overflow-hidden rounded-t-2xl">
