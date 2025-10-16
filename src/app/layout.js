@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Galaxy from './components/Galaxy';
+import PerformanceAwareBackground from './components/PerformanceAwareBackground';
 import Navbar from './components/Navbar'; 
 
 const geistSans = Geist({
@@ -16,22 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Jesslyn Trixie Edvilie | Portfolio",
   description: "Jesslyn's dev portfolio.",
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-white bg-black`}>
-        <div className="fixed top-0 left-0 w-full h-full -z-10 ">
-          <Galaxy 
-            mouseInteraction={true}
-            transparent={true}
-            density={0.9}
-            glowIntensity={0.2}
-            twinkleIntensity={0.9}
-            hueShift={220}
-          />
-        </div>
+        <PerformanceAwareBackground />
         <Navbar />
         {children}
       </body>
